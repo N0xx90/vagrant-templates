@@ -1,0 +1,15 @@
+[Unit]
+Description=Nodejs Applicartion
+
+[Service]
+ExecStart=/usr/bin/node /var/www/node/app.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=nodejs
+User=www-data
+Group=www-data
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
